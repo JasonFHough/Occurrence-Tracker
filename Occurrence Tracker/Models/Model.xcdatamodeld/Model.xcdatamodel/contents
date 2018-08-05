@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14135" systemVersion="17G65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Occurrence" representedClassName=".Occurrence" syncable="YES">
+        <attribute name="doesTrackLocation" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="trackedBooleanDataNames" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <attribute name="trackedStringDataNames" optional="YES" attributeType="Transformable" customClassName="[String]" syncable="YES"/>
+        <relationship name="entry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="OccurrenceEntry" inverseName="occurrence" inverseEntity="OccurrenceEntry" syncable="YES"/>
+    </entity>
+    <entity name="OccurrenceEntry" representedClassName=".OccurrenceEntry" syncable="YES">
+        <attribute name="enteredDate" attributeType="Date" usesScalarValueType="NO" customClassName="Date" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="trackedBooleanData" optional="YES" attributeType="Transformable" customClassName="[String:Bool]" syncable="YES"/>
+        <attribute name="trackedLocation" optional="YES" attributeType="Transformable" customClassName="CLLocation" syncable="YES"/>
+        <attribute name="trackedStringData" optional="YES" attributeType="Transformable" customClassName="[String:String]" syncable="YES"/>
+        <relationship name="occurrence" maxCount="1" deletionRule="Nullify" destinationEntity="Occurrence" inverseName="entry" inverseEntity="Occurrence" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Occurrence" positionX="-36" positionY="0" width="128" height="135"/>
+        <element name="OccurrenceEntry" positionX="187" positionY="89" width="128" height="135"/>
+    </elements>
+</model>

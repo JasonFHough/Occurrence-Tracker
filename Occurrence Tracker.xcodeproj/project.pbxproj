@@ -7,23 +7,125 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		96784939211773CC00467633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784938211773CC00467633 /* AppDelegate.swift */; };
-		9678493B211773CC00467633 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678493A211773CC00467633 /* ViewController.swift */; };
-		9678493E211773CC00467633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9678493C211773CC00467633 /* Main.storyboard */; };
-		96784941211773CC00467633 /* Occurrence_Tracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9678493F211773CC00467633 /* Occurrence_Tracker.xcdatamodeld */; };
-		96784943211773CD00467633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96784942211773CD00467633 /* Assets.xcassets */; };
-		96784946211773CD00467633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96784944211773CD00467633 /* LaunchScreen.storyboard */; };
+		96784960211774DC00467633 /* OccurrenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784951211774DC00467633 /* OccurrenceTableViewController.swift */; };
+		96784961211774DC00467633 /* NewOccurrenceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */; };
+		96784962211774DC00467633 /* TrackedDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784954211774DC00467633 /* TrackedDataTableViewController.swift */; };
+		96784963211774DC00467633 /* NewOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784955211774DC00467633 /* NewOccurrenceViewController.swift */; };
+		96784964211774DC00467633 /* FinishNewOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */; };
+		96784965211774DC00467633 /* NewOccurrenceSiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */; };
+		96784966211774DC00467633 /* NewOccurrenceLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */; };
+		96784967211774DC00467633 /* NewOccurrencePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784959211774DC00467633 /* NewOccurrencePageViewController.swift */; };
+		96784968211774DC00467633 /* LogOccurrenceEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */; };
+		96784969211774DC00467633 /* DetailedOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495C211774DC00467633 /* DetailedOccurrenceViewController.swift */; };
+		9678496A211774DC00467633 /* DetailedOccurrenceChartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495D211774DC00467633 /* DetailedOccurrenceChartViewController.swift */; };
+		9678496B211774DC00467633 /* AllDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495E211774DC00467633 /* AllDataTableViewController.swift */; };
+		9678496C211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495F211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift */; };
+		96784971211774EC00467633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678496E211774EC00467633 /* AppDelegate.swift */; };
+		96784972211774EC00467633 /* MyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678496F211774EC00467633 /* MyProtocols.swift */; };
+		96784973211774EC00467633 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784970211774EC00467633 /* MyExtensions.swift */; };
+		9678497C211774FA00467633 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784975211774FA00467633 /* Alert.swift */; };
+		9678497D211774FA00467633 /* Occurrence+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */; };
+		9678497E211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */; };
+		9678497F211774FA00467633 /* Occurrence+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784978211774FA00467633 /* Occurrence+CoreDataProperties.swift */; };
+		96784980211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784979211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift */; };
+		96784981211774FA00467633 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9678497A211774FA00467633 /* Model.xcdatamodeld */; };
+		967849942117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849832117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift */; };
+		967849952117750000467633 /* OccurrenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849842117750000467633 /* OccurrenceTableViewCell.swift */; };
+		967849962117750000467633 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967849852117750000467633 /* LaunchScreen.storyboard */; };
+		967849972117750000467633 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 967849872117750000467633 /* Main.storyboard */; };
+		967849982117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849892117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift */; };
+		967849992117750000467633 /* BooleanDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678498B2117750000467633 /* BooleanDataTableViewCell.swift */; };
+		9678499A2117750000467633 /* StringDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678498C2117750000467633 /* StringDataTableViewCell.swift */; };
+		9678499B2117750000467633 /* TrackedDataHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678498D2117750000467633 /* TrackedDataHeaderView.swift */; };
+		9678499C2117750000467633 /* DetailedOccurrenceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678498F2117750000467633 /* DetailedOccurrenceTableViewCell.swift */; };
+		9678499D2117750000467633 /* DetailedOccurrenceEntryHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849902117750000467633 /* DetailedOccurrenceEntryHeaderView.swift */; };
+		9678499E2117750000467633 /* EntryLocationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849912117750000467633 /* EntryLocationTableViewCell.swift */; };
+		9678499F2117750000467633 /* EntryTrackedDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849922117750000467633 /* EntryTrackedDataTableViewCell.swift */; };
+		967849A02117750000467633 /* ShownChartDataTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 967849932117750000467633 /* ShownChartDataTableViewCell.swift */; };
+		967849C12117756100467633 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 967849C02117756100467633 /* Info.plist */; };
+		967849C32117757000467633 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 967849C22117757000467633 /* Assets.xcassets */; };
+		967849D8211776C900467633 /* ResearchKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 967849D52117768500467633 /* ResearchKit.framework */; };
+		967849D9211776C900467633 /* ResearchKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 967849D52117768500467633 /* ResearchKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		967849D42117768500467633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 967849CE2117768500467633 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = B183A5951A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+		967849D62117768500467633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 967849CE2117768500467633 /* ResearchKit.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 86CC8E9A1AC09332001CCD89;
+			remoteInfo = ResearchKitTests;
+		};
+		967849DA211776C900467633 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 967849CE2117768500467633 /* ResearchKit.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = B183A4731A8535D100C76870;
+			remoteInfo = ResearchKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		967849DC211776C900467633 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				967849D9211776C900467633 /* ResearchKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		96784935211773CC00467633 /* Occurrence Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Occurrence Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		96784938211773CC00467633 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9678493A211773CC00467633 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9678493D211773CC00467633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		96784940211773CC00467633 /* Occurrence_Tracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Occurrence_Tracker.xcdatamodel; sourceTree = "<group>"; };
-		96784942211773CD00467633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		96784945211773CD00467633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		96784947211773CD00467633 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96784951211774DC00467633 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurrenceTableViewController.swift; sourceTree = "<group>"; };
+		96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceNameViewController.swift; sourceTree = "<group>"; };
+		96784954211774DC00467633 /* TrackedDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackedDataTableViewController.swift; sourceTree = "<group>"; };
+		96784955211774DC00467633 /* NewOccurrenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceViewController.swift; sourceTree = "<group>"; };
+		96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishNewOccurrenceViewController.swift; sourceTree = "<group>"; };
+		96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceSiriViewController.swift; sourceTree = "<group>"; };
+		96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceLocationViewController.swift; sourceTree = "<group>"; };
+		96784959211774DC00467633 /* NewOccurrencePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrencePageViewController.swift; sourceTree = "<group>"; };
+		9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOccurrenceEntryTableViewController.swift; sourceTree = "<group>"; };
+		9678495C211774DC00467633 /* DetailedOccurrenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOccurrenceViewController.swift; sourceTree = "<group>"; };
+		9678495D211774DC00467633 /* DetailedOccurrenceChartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOccurrenceChartViewController.swift; sourceTree = "<group>"; };
+		9678495E211774DC00467633 /* AllDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AllDataTableViewController.swift; sourceTree = "<group>"; };
+		9678495F211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOccurrenceEntryTableViewController.swift; sourceTree = "<group>"; };
+		9678496E211774EC00467633 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9678496F211774EC00467633 /* MyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProtocols.swift; sourceTree = "<group>"; };
+		96784970211774EC00467633 /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		96784975211774FA00467633 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Occurrence+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OccurrenceEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		96784978211774FA00467633 /* Occurrence+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Occurrence+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		96784979211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OccurrenceEntry+CoreDataClass.swift"; sourceTree = "<group>"; };
+		9678497B211774FA00467633 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		967849832117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOccurrenceBooleanEntryTableViewCell.swift; sourceTree = "<group>"; };
+		967849842117750000467633 /* OccurrenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurrenceTableViewCell.swift; sourceTree = "<group>"; };
+		967849862117750000467633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		967849882117750000467633 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		967849892117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOccurrenceStringEntryTableViewCell.swift; sourceTree = "<group>"; };
+		9678498B2117750000467633 /* BooleanDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooleanDataTableViewCell.swift; sourceTree = "<group>"; };
+		9678498C2117750000467633 /* StringDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringDataTableViewCell.swift; sourceTree = "<group>"; };
+		9678498D2117750000467633 /* TrackedDataHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackedDataHeaderView.swift; sourceTree = "<group>"; };
+		9678498F2117750000467633 /* DetailedOccurrenceTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOccurrenceTableViewCell.swift; sourceTree = "<group>"; };
+		967849902117750000467633 /* DetailedOccurrenceEntryHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOccurrenceEntryHeaderView.swift; sourceTree = "<group>"; };
+		967849912117750000467633 /* EntryLocationTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryLocationTableViewCell.swift; sourceTree = "<group>"; };
+		967849922117750000467633 /* EntryTrackedDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryTrackedDataTableViewCell.swift; sourceTree = "<group>"; };
+		967849932117750000467633 /* ShownChartDataTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShownChartDataTableViewCell.swift; sourceTree = "<group>"; };
+		967849C02117756100467633 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		967849C22117757000467633 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		967849CE2117768500467633 /* ResearchKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ResearchKit.xcodeproj; path = "../../../ResearchKit-master/ResearchKit.xcodeproj"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +133,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				967849D8211776C900467633 /* ResearchKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,7 +143,10 @@
 		9678492C211773CC00467633 = {
 			isa = PBXGroup;
 			children = (
+				967849CE2117768500467633 /* ResearchKit.xcodeproj */,
 				96784937211773CC00467633 /* Occurrence Tracker */,
+				967849C02117756100467633 /* Info.plist */,
+				967849C22117757000467633 /* Assets.xcassets */,
 				96784936211773CC00467633 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -56,15 +162,116 @@
 		96784937211773CC00467633 /* Occurrence Tracker */ = {
 			isa = PBXGroup;
 			children = (
-				96784938211773CC00467633 /* AppDelegate.swift */,
-				9678493A211773CC00467633 /* ViewController.swift */,
-				9678493C211773CC00467633 /* Main.storyboard */,
-				96784942211773CD00467633 /* Assets.xcassets */,
-				96784944211773CD00467633 /* LaunchScreen.storyboard */,
-				96784947211773CD00467633 /* Info.plist */,
-				9678493F211773CC00467633 /* Occurrence_Tracker.xcdatamodeld */,
+				96784974211774FA00467633 /* Models */,
+				967849822117750000467633 /* Views */,
+				96784950211774DC00467633 /* Controllers */,
+				9678496D211774EC00467633 /* Helpers */,
 			);
 			path = "Occurrence Tracker";
+			sourceTree = "<group>";
+		};
+		96784950211774DC00467633 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				96784951211774DC00467633 /* OccurrenceTableViewController.swift */,
+				96784952211774DC00467633 /* New Occurrence */,
+				9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */,
+				9678495B211774DC00467633 /* Detailed Occurrence */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		96784952211774DC00467633 /* New Occurrence */ = {
+			isa = PBXGroup;
+			children = (
+				96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */,
+				96784954211774DC00467633 /* TrackedDataTableViewController.swift */,
+				96784955211774DC00467633 /* NewOccurrenceViewController.swift */,
+				96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */,
+				96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */,
+				96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */,
+				96784959211774DC00467633 /* NewOccurrencePageViewController.swift */,
+			);
+			path = "New Occurrence";
+			sourceTree = "<group>";
+		};
+		9678495B211774DC00467633 /* Detailed Occurrence */ = {
+			isa = PBXGroup;
+			children = (
+				9678495C211774DC00467633 /* DetailedOccurrenceViewController.swift */,
+				9678495D211774DC00467633 /* DetailedOccurrenceChartViewController.swift */,
+				9678495E211774DC00467633 /* AllDataTableViewController.swift */,
+				9678495F211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift */,
+			);
+			path = "Detailed Occurrence";
+			sourceTree = "<group>";
+		};
+		9678496D211774EC00467633 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				9678496E211774EC00467633 /* AppDelegate.swift */,
+				9678496F211774EC00467633 /* MyProtocols.swift */,
+				96784970211774EC00467633 /* MyExtensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		96784974211774FA00467633 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				96784975211774FA00467633 /* Alert.swift */,
+				96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */,
+				96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */,
+				96784978211774FA00467633 /* Occurrence+CoreDataProperties.swift */,
+				96784979211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift */,
+				9678497A211774FA00467633 /* Model.xcdatamodeld */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		967849822117750000467633 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				967849832117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift */,
+				967849842117750000467633 /* OccurrenceTableViewCell.swift */,
+				967849852117750000467633 /* LaunchScreen.storyboard */,
+				967849872117750000467633 /* Main.storyboard */,
+				967849892117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift */,
+				9678498A2117750000467633 /* New Occurrence */,
+				9678498E2117750000467633 /* Detailed Occurrence */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9678498A2117750000467633 /* New Occurrence */ = {
+			isa = PBXGroup;
+			children = (
+				9678498B2117750000467633 /* BooleanDataTableViewCell.swift */,
+				9678498C2117750000467633 /* StringDataTableViewCell.swift */,
+				9678498D2117750000467633 /* TrackedDataHeaderView.swift */,
+			);
+			path = "New Occurrence";
+			sourceTree = "<group>";
+		};
+		9678498E2117750000467633 /* Detailed Occurrence */ = {
+			isa = PBXGroup;
+			children = (
+				9678498F2117750000467633 /* DetailedOccurrenceTableViewCell.swift */,
+				967849902117750000467633 /* DetailedOccurrenceEntryHeaderView.swift */,
+				967849912117750000467633 /* EntryLocationTableViewCell.swift */,
+				967849922117750000467633 /* EntryTrackedDataTableViewCell.swift */,
+				967849932117750000467633 /* ShownChartDataTableViewCell.swift */,
+			);
+			path = "Detailed Occurrence";
+			sourceTree = "<group>";
+		};
+		967849CF2117768500467633 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				967849D52117768500467633 /* ResearchKit.framework */,
+				967849D72117768500467633 /* ResearchKitTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -77,10 +284,12 @@
 				96784931211773CC00467633 /* Sources */,
 				96784932211773CC00467633 /* Frameworks */,
 				96784933211773CC00467633 /* Resources */,
+				967849DC211776C900467633 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				967849DB211776C900467633 /* PBXTargetDependency */,
 			);
 			name = "Occurrence Tracker";
 			productName = "Occurrence Tracker";
@@ -113,6 +322,12 @@
 			mainGroup = 9678492C211773CC00467633;
 			productRefGroup = 96784936211773CC00467633 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 967849CF2117768500467633 /* Products */;
+					ProjectRef = 967849CE2117768500467633 /* ResearchKit.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				96784934211773CC00467633 /* Occurrence Tracker */,
@@ -120,14 +335,32 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		967849D52117768500467633 /* ResearchKit.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ResearchKit.framework;
+			remoteRef = 967849D42117768500467633 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		967849D72117768500467633 /* ResearchKitTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = ResearchKitTests.xctest;
+			remoteRef = 967849D62117768500467633 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		96784933211773CC00467633 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				96784946211773CD00467633 /* LaunchScreen.storyboard in Resources */,
-				96784943211773CD00467633 /* Assets.xcassets in Resources */,
-				9678493E211773CC00467633 /* Main.storyboard in Resources */,
+				967849972117750000467633 /* Main.storyboard in Resources */,
+				967849962117750000467633 /* LaunchScreen.storyboard in Resources */,
+				967849C32117757000467633 /* Assets.xcassets in Resources */,
+				967849C12117756100467633 /* Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,29 +371,67 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9678493B211773CC00467633 /* ViewController.swift in Sources */,
-				96784939211773CC00467633 /* AppDelegate.swift in Sources */,
-				96784941211773CC00467633 /* Occurrence_Tracker.xcdatamodeld in Sources */,
+				9678499A2117750000467633 /* StringDataTableViewCell.swift in Sources */,
+				96784962211774DC00467633 /* TrackedDataTableViewController.swift in Sources */,
+				9678496A211774DC00467633 /* DetailedOccurrenceChartViewController.swift in Sources */,
+				9678497D211774FA00467633 /* Occurrence+CoreDataClass.swift in Sources */,
+				96784961211774DC00467633 /* NewOccurrenceNameViewController.swift in Sources */,
+				96784980211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift in Sources */,
+				967849992117750000467633 /* BooleanDataTableViewCell.swift in Sources */,
+				9678499E2117750000467633 /* EntryLocationTableViewCell.swift in Sources */,
+				9678499C2117750000467633 /* DetailedOccurrenceTableViewCell.swift in Sources */,
+				9678497F211774FA00467633 /* Occurrence+CoreDataProperties.swift in Sources */,
+				9678497E211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift in Sources */,
+				96784965211774DC00467633 /* NewOccurrenceSiriViewController.swift in Sources */,
+				96784963211774DC00467633 /* NewOccurrenceViewController.swift in Sources */,
+				9678499F2117750000467633 /* EntryTrackedDataTableViewCell.swift in Sources */,
+				9678499B2117750000467633 /* TrackedDataHeaderView.swift in Sources */,
+				967849942117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift in Sources */,
+				96784968211774DC00467633 /* LogOccurrenceEntryTableViewController.swift in Sources */,
+				96784964211774DC00467633 /* FinishNewOccurrenceViewController.swift in Sources */,
+				9678496C211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift in Sources */,
+				96784966211774DC00467633 /* NewOccurrenceLocationViewController.swift in Sources */,
+				96784972211774EC00467633 /* MyProtocols.swift in Sources */,
+				96784960211774DC00467633 /* OccurrenceTableViewController.swift in Sources */,
+				967849952117750000467633 /* OccurrenceTableViewCell.swift in Sources */,
+				96784967211774DC00467633 /* NewOccurrencePageViewController.swift in Sources */,
+				967849A02117750000467633 /* ShownChartDataTableViewCell.swift in Sources */,
+				9678496B211774DC00467633 /* AllDataTableViewController.swift in Sources */,
+				96784971211774EC00467633 /* AppDelegate.swift in Sources */,
+				96784973211774EC00467633 /* MyExtensions.swift in Sources */,
+				96784981211774FA00467633 /* Model.xcdatamodeld in Sources */,
+				967849982117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift in Sources */,
+				9678497C211774FA00467633 /* Alert.swift in Sources */,
+				9678499D2117750000467633 /* DetailedOccurrenceEntryHeaderView.swift in Sources */,
+				96784969211774DC00467633 /* DetailedOccurrenceViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
-/* Begin PBXVariantGroup section */
-		9678493C211773CC00467633 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9678493D211773CC00467633 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
+/* Begin PBXTargetDependency section */
+		967849DB211776C900467633 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ResearchKit;
+			targetProxy = 967849DA211776C900467633 /* PBXContainerItemProxy */;
 		};
-		96784944211773CD00467633 /* LaunchScreen.storyboard */ = {
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		967849852117750000467633 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				96784945211773CD00467633 /* Base */,
+				967849862117750000467633 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		967849872117750000467633 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				967849882117750000467633 /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -283,10 +554,11 @@
 		9678494B211773CD00467633 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DM46G37QA;
-				INFOPLIST_FILE = "Occurrence Tracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -301,10 +573,11 @@
 		9678494C211773CD00467633 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5DM46G37QA;
-				INFOPLIST_FILE = "Occurrence Tracker/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -340,13 +613,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		9678493F211773CC00467633 /* Occurrence_Tracker.xcdatamodeld */ = {
+		9678497A211774FA00467633 /* Model.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				96784940211773CC00467633 /* Occurrence_Tracker.xcdatamodel */,
+				9678497B211774FA00467633 /* Model.xcdatamodel */,
 			);
-			currentVersion = 96784940211773CC00467633 /* Occurrence_Tracker.xcdatamodel */;
-			path = Occurrence_Tracker.xcdatamodeld;
+			currentVersion = 9678497B211774FA00467633 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
