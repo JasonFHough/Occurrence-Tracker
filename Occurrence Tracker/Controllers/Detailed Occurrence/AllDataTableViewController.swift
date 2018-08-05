@@ -30,11 +30,7 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
         }
         
         // Retrieve all the data from the database
-        do {
-            try fetchedResultsController.performFetch()
-        } catch let e as NSError {
-            print("Error fetching entity OccurrenceEntry. Error: \(e)")
-        }
+        fetchedResultsController.retrieveData()
         
         // Display No Data text if removed last entry
         checkIfNoEntriesAreEntered()
@@ -152,11 +148,7 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
             let entry = fetchedResultsController.object(at: indexPath)
             fetchedResultsController.managedObjectContext.delete(entry)
             
-            do {
-                try fetchedResultsController.managedObjectContext.save()
-            } catch let e {
-                print("Error trying to save deletion. Error: \(e)")
-            }
+            fetchedResultsController.saveData()
             
             // Reload the chart's data
             chartVC?.changeChartView()

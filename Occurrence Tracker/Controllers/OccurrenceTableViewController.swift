@@ -33,18 +33,10 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
             }
             
             // Retrieve all the data from the database
-            do {
-                try fetchedResultsController.performFetch()
-            } catch let e as NSError {
-                print("Error fetching entity Occurrence. Error: \(e)")
-            }
+            fetchedResultsController.retrieveData()
         } else {
             // Save any new changes to the occurrence
-            do {
-                try fetchedResultsController.managedObjectContext.save()
-            } catch let e as NSError {
-                print("Error saving. Error: \(e)")
-            }
+            fetchedResultsController.saveData()
         }
     }
     
@@ -122,14 +114,10 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let person = fetchedResultsController.object(at: indexPath)
-            fetchedResultsController.managedObjectContext.delete(person)
+            let occurrence = fetchedResultsController.object(at: indexPath)
+            fetchedResultsController.managedObjectContext.delete(occurrence)
             
-            do {
-                try fetchedResultsController.managedObjectContext.save()
-            } catch let e {
-                print("Error trying to save deletion. Error: \(e)")
-            }
+            fetchedResultsController.saveData()
         }
     }
     
@@ -163,7 +151,7 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
             
             let selectedOccurrence = fetchedResultsController.object(at: indexPath)
             
-            detailedOccurrenceDelegate.passData(occurrenceObject: selectedOccurrence, sourceVC: self, sourceCell: selectedOccurrenceCell)
+            detailedOccurrenceDelegate.passOccurrenceDataToDetailViewController(occurrenceObject: selectedOccurrence, sourceVC: self, sourceCell: selectedOccurrenceCell)
             
         default:
             fatalError("Unable to assign any delegate prior to navigation")
@@ -172,7 +160,7 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
 }
 
 extension OccurrenceTableViewController: NewOccurrenceDelegate {
-    func passFinalOccurrenceData(name: String, identifier: String, doesTrackLocation: Bool, trackedStringDataNames: [String], trackedBooleanDataNames: [String]) {
+    func createNewOccurrenceUsingCollectedData(name: String, identifier: String, doesTrackLocation: Bool, trackedStringDataNames: [String], trackedBooleanDataNames: [String]) {
         let context = self.fetchedResultsController.managedObjectContext
         guard let entity = NSEntityDescription.entity(forEntityName: "Occurrence", in: context) else { fatalError("Could not assign EntityDescription") }
         
@@ -185,10 +173,6 @@ extension OccurrenceTableViewController: NewOccurrenceDelegate {
         occurrence.entry = []
         
         
-        do {
-            try context.save()
-        } catch let e as NSError {
-            print("Error saving. Error: \(e)")
-        }
+        fetchedResultsController.saveData()
     }
 }

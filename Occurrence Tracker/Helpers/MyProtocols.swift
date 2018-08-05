@@ -9,11 +9,11 @@
 import Foundation
 
 protocol DetailedOccurrenceDelegate {
-    func passData(occurrenceObject: Occurrence, sourceVC: OccurrenceTableViewController, sourceCell: OccurrenceTableViewCell)
+    func passOccurrenceDataToDetailViewController(occurrenceObject: Occurrence, sourceVC: OccurrenceTableViewController, sourceCell: OccurrenceTableViewCell)
 }
 
 protocol NewOccurrenceDelegate {
-    func passFinalOccurrenceData(name: String, identifier: String, doesTrackLocation: Bool, trackedStringDataNames: [String], trackedBooleanDataNames: [String])
+    func createNewOccurrenceUsingCollectedData(name: String, identifier: String, doesTrackLocation: Bool, trackedStringDataNames: [String], trackedBooleanDataNames: [String])
 }
 
 protocol NewOccurrencePageViewDelegate {

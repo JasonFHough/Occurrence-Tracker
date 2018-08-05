@@ -81,7 +81,7 @@ class FinishNewOccurrenceViewController: UIViewController {
 
         
         // Send the Occurrence Data to OccurrenceTableViewController
-        parentView?.newOccurrenceDelegate?.passFinalOccurrenceData(name: name, identifier: identifier, doesTrackLocation: useLocation, trackedStringDataNames: trackedStringDataNames, trackedBooleanDataNames: trackedBooleanDataNames)
+        parentView?.newOccurrenceDelegate?.createNewOccurrenceUsingCollectedData(name: name, identifier: identifier, doesTrackLocation: useLocation, trackedStringDataNames: trackedStringDataNames, trackedBooleanDataNames: trackedBooleanDataNames)
         
         // Go back to the home view
         dismiss(animated: true, completion: nil)

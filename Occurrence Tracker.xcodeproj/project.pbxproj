@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9606D4C221177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */; };
 		96784960211774DC00467633 /* OccurrenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784951211774DC00467633 /* OccurrenceTableViewController.swift */; };
 		96784961211774DC00467633 /* NewOccurrenceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */; };
 		96784962211774DC00467633 /* TrackedDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784954211774DC00467633 /* TrackedDataTableViewController.swift */; };
@@ -22,7 +23,7 @@
 		9678496C211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495F211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift */; };
 		96784971211774EC00467633 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678496E211774EC00467633 /* AppDelegate.swift */; };
 		96784972211774EC00467633 /* MyProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678496F211774EC00467633 /* MyProtocols.swift */; };
-		96784973211774EC00467633 /* MyExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784970211774EC00467633 /* MyExtensions.swift */; };
+		96784973211774EC00467633 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784970211774EC00467633 /* DateExtension.swift */; };
 		9678497C211774FA00467633 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784975211774FA00467633 /* Alert.swift */; };
 		9678497D211774FA00467633 /* Occurrence+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */; };
 		9678497E211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */; };
@@ -87,6 +88,7 @@
 
 /* Begin PBXFileReference section */
 		9606D4C021177A9700876AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../../Users/jason/Downloads/Occurrence-Tracker-master/Occurrence Tracker/Info.plist"; sourceTree = "<group>"; };
+		9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsControllerDelegateExtension.swift; sourceTree = "<group>"; };
 		96784935211773CC00467633 /* Occurrence Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Occurrence Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96784951211774DC00467633 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurrenceTableViewController.swift; sourceTree = "<group>"; };
 		96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceNameViewController.swift; sourceTree = "<group>"; };
@@ -103,7 +105,7 @@
 		9678495F211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedOccurrenceEntryTableViewController.swift; sourceTree = "<group>"; };
 		9678496E211774EC00467633 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9678496F211774EC00467633 /* MyProtocols.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyProtocols.swift; sourceTree = "<group>"; };
-		96784970211774EC00467633 /* MyExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyExtensions.swift; sourceTree = "<group>"; };
+		96784970211774EC00467633 /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		96784975211774FA00467633 /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 		96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Occurrence+CoreDataClass.swift"; sourceTree = "<group>"; };
 		96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "OccurrenceEntry+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -174,8 +176,8 @@
 			children = (
 				96784951211774DC00467633 /* OccurrenceTableViewController.swift */,
 				96784952211774DC00467633 /* New Occurrence */,
-				9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */,
 				9678495B211774DC00467633 /* Detailed Occurrence */,
+				9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -183,13 +185,13 @@
 		96784952211774DC00467633 /* New Occurrence */ = {
 			isa = PBXGroup;
 			children = (
+				96784955211774DC00467633 /* NewOccurrenceViewController.swift */,
+				96784959211774DC00467633 /* NewOccurrencePageViewController.swift */,
 				96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */,
 				96784954211774DC00467633 /* TrackedDataTableViewController.swift */,
-				96784955211774DC00467633 /* NewOccurrenceViewController.swift */,
-				96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */,
 				96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */,
 				96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */,
-				96784959211774DC00467633 /* NewOccurrencePageViewController.swift */,
+				96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */,
 			);
 			path = "New Occurrence";
 			sourceTree = "<group>";
@@ -210,7 +212,8 @@
 			children = (
 				9678496E211774EC00467633 /* AppDelegate.swift */,
 				9678496F211774EC00467633 /* MyProtocols.swift */,
-				96784970211774EC00467633 /* MyExtensions.swift */,
+				96784970211774EC00467633 /* DateExtension.swift */,
+				9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -218,12 +221,12 @@
 		96784974211774FA00467633 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				96784975211774FA00467633 /* Alert.swift */,
-				96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */,
-				96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */,
 				96784978211774FA00467633 /* Occurrence+CoreDataProperties.swift */,
+				96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */,
+				96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */,
 				96784979211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift */,
 				9678497A211774FA00467633 /* Model.xcdatamodeld */,
+				96784975211774FA00467633 /* Alert.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -231,11 +234,11 @@
 		967849822117750000467633 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				967849832117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift */,
-				967849842117750000467633 /* OccurrenceTableViewCell.swift */,
 				967849852117750000467633 /* LaunchScreen.storyboard */,
 				967849872117750000467633 /* Main.storyboard */,
+				967849842117750000467633 /* OccurrenceTableViewCell.swift */,
 				967849892117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift */,
+				967849832117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift */,
 				9678498A2117750000467633 /* New Occurrence */,
 				9678498E2117750000467633 /* Detailed Occurrence */,
 			);
@@ -387,6 +390,7 @@
 				967849942117750000467633 /* LogOccurrenceBooleanEntryTableViewCell.swift in Sources */,
 				96784968211774DC00467633 /* LogOccurrenceEntryTableViewController.swift in Sources */,
 				96784964211774DC00467633 /* FinishNewOccurrenceViewController.swift in Sources */,
+				9606D4C221177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift in Sources */,
 				9678496C211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift in Sources */,
 				96784966211774DC00467633 /* NewOccurrenceLocationViewController.swift in Sources */,
 				96784972211774EC00467633 /* MyProtocols.swift in Sources */,
@@ -396,7 +400,7 @@
 				967849A02117750000467633 /* ShownChartDataTableViewCell.swift in Sources */,
 				9678496B211774DC00467633 /* AllDataTableViewController.swift in Sources */,
 				96784971211774EC00467633 /* AppDelegate.swift in Sources */,
-				96784973211774EC00467633 /* MyExtensions.swift in Sources */,
+				96784973211774EC00467633 /* DateExtension.swift in Sources */,
 				96784981211774FA00467633 /* Model.xcdatamodeld in Sources */,
 				967849982117750000467633 /* LogOccurrenceStringEntryTableViewCell.swift in Sources */,
 				9678497C211774FA00467633 /* Alert.swift in Sources */,

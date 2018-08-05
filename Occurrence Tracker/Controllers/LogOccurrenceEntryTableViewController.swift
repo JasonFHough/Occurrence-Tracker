@@ -99,11 +99,7 @@ class LogOccurrenceEntryTableViewController: UITableViewController, CLLocationMa
         entry.trackedLocation = location
         entry.occurrence = selectedOccurrence
         
-        do {
-            try context.save()
-        } catch let e as NSError {
-            print("Error saving. Error: \(e)")
-        }
+        fetchedResultsController.saveData()
     }
     
     @IBAction func saveButtonActions(_ sender: UIBarButtonItem?) {

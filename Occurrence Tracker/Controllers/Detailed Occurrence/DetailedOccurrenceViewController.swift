@@ -159,7 +159,7 @@ class DetailedOccurrenceViewController: UIViewController, UITableViewDelegate, U
                 do {
                     try context.save()
                 } catch let e as NSError {
-                    print("Error saving. Error: \(e)")
+                    print("Error saving a new entry. Error: \(e)")
                 }
                 
                 setMinAndMaxDate()
@@ -244,7 +244,7 @@ class DetailedOccurrenceViewController: UIViewController, UITableViewDelegate, U
                 context.delete(result[0])
                 try context.save()
             } catch let e as NSError {
-                print("Error trying to save deletion. Error: \(e)")
+                print("Error trying to save OccurrenceEntry deletion. Error: \(e)")
             }
             
             shownOnChartData.remove(at: indexPath.row)
@@ -258,7 +258,7 @@ class DetailedOccurrenceViewController: UIViewController, UITableViewDelegate, U
 // MARK: - Extensions
 
 extension DetailedOccurrenceViewController: DetailedOccurrenceDelegate {
-    func passData(occurrenceObject: Occurrence, sourceVC: OccurrenceTableViewController, sourceCell: OccurrenceTableViewCell) {
+    func passOccurrenceDataToDetailViewController(occurrenceObject: Occurrence, sourceVC: OccurrenceTableViewController, sourceCell: OccurrenceTableViewCell) {
         selectedOccurrence = occurrenceObject
         sourceViewController = sourceVC
         self.sourceCell = sourceCell
