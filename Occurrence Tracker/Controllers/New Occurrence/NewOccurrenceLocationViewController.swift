@@ -21,6 +21,8 @@ class NewOccurrenceLocationViewController: UIViewController, CLLocationManagerDe
         locationManager.delegate = self
         
         checkForLocationAccess()
+        
+        locationSwitch.addTarget(self, action: #selector(askForLocationAccess), for: .valueChanged)
     }
 
     @IBAction private func previousButtonAction(_ sender: UIButton) {
@@ -33,7 +35,7 @@ class NewOccurrenceLocationViewController: UIViewController, CLLocationManagerDe
         parentView.goToNextPage()
     }
     
-    @objc private func checkForLocationAccess() {
+    @objc private func askForLocationAccess() {
         switch CLLocationManager.authorizationStatus() {
         case .denied, .restricted, .notDetermined:
             locationNoteLabel.isHidden = false
@@ -45,11 +47,22 @@ class NewOccurrenceLocationViewController: UIViewController, CLLocationManagerDe
             locationNoteLabel.isHidden = true
             locationSwitch.isEnabled = true
         }
-        
+    }
+    
+    private func checkForLocationAccess() {
+        switch CLLocationManager.authorizationStatus() {
+        case .denied, .restricted, .notDetermined:
+            locationNoteLabel.isHidden = false
+            locationSwitch.isOn = false
+            locationSwitch.isEnabled = false
+        default:
+            locationNoteLabel.isHidden = true
+            locationSwitch.isEnabled = true
+        }
     }
     
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        checkForLocationAccess()
+        askForLocationAccess()
     }
     
 }

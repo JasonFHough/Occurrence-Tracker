@@ -14,7 +14,7 @@ class NewOccurrencePageViewController: UIPageViewController, UIPageViewControlle
        return [
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceNameView") as! NewOccurrenceNameViewController,
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrackedDataView") as! TrackedDataTableViewController,
-        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceSiriView") as! NewOccurrenceSiriViewController,
+//        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceSiriView") as! NewOccurrenceSiriViewController,
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceLocationView") as! NewOccurrenceLocationViewController,
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinishNewOccurrenceView") as! FinishNewOccurrenceViewController
         ]
@@ -83,10 +83,8 @@ class NewOccurrencePageViewController: UIPageViewController, UIPageViewControlle
         case 1:
             return "Tracked Data"
         case 2:
-            return "Use Siri Shortcut"
-        case 3:
             return "Use Location"
-        case 4:
+        case 3:
             return "Finish"
         default:
             return "New Occurrence"

@@ -42,8 +42,8 @@ class FinishNewOccurrenceViewController: UIViewController {
         // Get references to each page's specific ViewController
         let namePage = pages[0] as! NewOccurrenceNameViewController
         let trackDataPage = pages[1] as! TrackedDataTableViewController
-        let siriPage = pages[2] as! NewOccurrenceSiriViewController
-        let locationPage = pages[3] as! NewOccurrenceLocationViewController
+//        let siriPage = pages[2] as! NewOccurrenceSiriViewController
+        let locationPage = pages[2] as! NewOccurrenceLocationViewController
         
         // Start collecting the data for each piece of the Occurrence
         let occurrenceName = namePage.nameTextField.text
@@ -76,7 +76,7 @@ class FinishNewOccurrenceViewController: UIViewController {
             }
         }
         
-        let useSiri = siriPage.siriShortcutSwitch.isOn
+//        let useSiri = siriPage.siriShortcutSwitch.isOn
         let useLocation = locationPage.locationSwitch.isOn
 
         
