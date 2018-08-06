@@ -20,7 +20,7 @@ class NewOccurrenceLocationViewController: UIViewController, CLLocationManagerDe
         super.viewDidLoad()
         locationManager.delegate = self
         
-        checkForLocationAccess()
+        askForLocationAccess()
         
         locationSwitch.addTarget(self, action: #selector(askForLocationAccess), for: .valueChanged)
     }
