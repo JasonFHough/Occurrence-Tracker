@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9606D4C221177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */; };
+		9606D4C62118F5E600876AA8 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9606D4C52118F5E600876AA8 /* StringExtension.swift */; };
 		96784960211774DC00467633 /* OccurrenceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784951211774DC00467633 /* OccurrenceTableViewController.swift */; };
 		96784961211774DC00467633 /* NewOccurrenceNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */; };
 		96784962211774DC00467633 /* TrackedDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784954211774DC00467633 /* TrackedDataTableViewController.swift */; };
@@ -89,6 +90,7 @@
 /* Begin PBXFileReference section */
 		9606D4C021177A9700876AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../../Users/jason/Downloads/Occurrence-Tracker-master/Occurrence Tracker/Info.plist"; sourceTree = "<group>"; };
 		9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsControllerDelegateExtension.swift; sourceTree = "<group>"; };
+		9606D4C52118F5E600876AA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		96784935211773CC00467633 /* Occurrence Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Occurrence Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		96784951211774DC00467633 /* OccurrenceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OccurrenceTableViewController.swift; sourceTree = "<group>"; };
 		96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceNameViewController.swift; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				9678496F211774EC00467633 /* MyProtocols.swift */,
 				96784970211774EC00467633 /* DateExtension.swift */,
 				9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */,
+				9606D4C52118F5E600876AA8 /* StringExtension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -394,6 +397,7 @@
 				9678496C211774DC00467633 /* DetailedOccurrenceEntryTableViewController.swift in Sources */,
 				96784966211774DC00467633 /* NewOccurrenceLocationViewController.swift in Sources */,
 				96784972211774EC00467633 /* MyProtocols.swift in Sources */,
+				9606D4C62118F5E600876AA8 /* StringExtension.swift in Sources */,
 				96784960211774DC00467633 /* OccurrenceTableViewController.swift in Sources */,
 				967849952117750000467633 /* OccurrenceTableViewCell.swift in Sources */,
 				96784967211774DC00467633 /* NewOccurrencePageViewController.swift in Sources */,

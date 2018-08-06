@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MapKit
 
 class AllDataTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
     
@@ -17,8 +18,12 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
     var chartVC: DetailedOccurrenceChartViewController?
     var detailedOccurrenceVC: DetailedOccurrenceViewController!
     
+    var exportBarButton: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        exportBarButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(exportButtonAction))
+        self.navigationItem.rightBarButtonItems = [self.editButtonItem, exportBarButton!]
         
         // Assign fetch result controller
         let fetchRequest: NSFetchRequest<OccurrenceEntry> = OccurrenceEntry.fetchRequest()
@@ -37,8 +42,6 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
         
         // Disable selection of cells if no extra data is tracked
         checkIfOccurrenceTracksAnyData()
-        
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     private func checkIfOccurrenceTracksAnyData() {
@@ -63,10 +66,116 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
             tableView.backgroundView = label
             tableView.backgroundColor = UIColor(red: 0.92, green: 0.92, blue: 0.95, alpha:1.0)
             tableView.separatorStyle = .none
+            
+            exportBarButton!.isEnabled = false
         } else {
             tableView.backgroundView = nil
             tableView.backgroundColor = UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             tableView.separatorStyle = .singleLine
+            
+            exportBarButton!.isEnabled = true
+        }
+    }
+    
+    func getDataAsFormattedString() -> String {
+        guard let occurrenceName = detailedOccurrenceVC.selectedOccurrence.name else { fatalError("Could not get Occurrence Name.") }
+        var textForCSV: String = "\(occurrenceName),"
+        var stringDataOrder: [String] = [String]()
+        var booleanDataOrder: [String] = [String]()
+
+        // String Names
+        if let stringNames = detailedOccurrenceVC.selectedOccurrence.trackedStringDataNames {
+            for name in stringNames {
+                textForCSV.append("\(name),")
+                stringDataOrder.append("\(name)")
+            }
+        }
+
+        // Boolean Names
+        if let booleanNames = detailedOccurrenceVC.selectedOccurrence.trackedBooleanDataNames {
+            for name in booleanNames {
+                textForCSV.append("\(name),")
+                booleanDataOrder.append("\(name)")
+            }
+        }
+
+        // Location
+        textForCSV.append("Tracked Location Address\n")
+
+        // Entry Data
+        if let entries = detailedOccurrenceVC.selectedOccurrence.entry {
+            for entry in entries {
+                guard let entry = entry as? OccurrenceEntry else { continue }
+                guard let date = entry.enteredDate?.formattedDate else { fatalError("Could not get the entered date.") }
+                var newEntryLine: String = "\(date.makeCSVFileFormatSafe),"
+
+                // String Data
+                for nameKey in stringDataOrder {
+                    if let value = entry.trackedStringData?[nameKey] {
+                        newEntryLine.append("\(value.makeCSVFileFormatSafe),")
+                    }
+                }
+
+                // Boolean Data
+                for nameKey in booleanDataOrder {
+                    if let value = entry.trackedBooleanData?[nameKey] {
+                        let boolAsString: String = "\(value)"
+                        newEntryLine.append("\(boolAsString.makeCSVFileFormatSafe),")
+                    }
+                }
+
+                if let location = entry.trackedLocation {
+                    let geoCoder = CLGeocoder()
+                    var formattedAddress: String?
+                    geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+                        formattedAddress = entry.getFormattedAddress(withPlacemarks: placemarks, error: error)
+
+                        if let address = formattedAddress {
+                            newEntryLine.append("\(address.makeCSVFileFormatSafe)")
+                        }
+                    }
+                } else {
+                    // Remove the last comma
+                    newEntryLine.remove(at: newEntryLine.index(before: newEntryLine.endIndex))
+                }
+
+                newEntryLine.append("\n")
+
+                textForCSV.append(newEntryLine)
+            }
+        }
+        
+        return textForCSV
+    }
+    
+    @objc func exportButtonAction() {
+        guard let occurrenceName = detailedOccurrenceVC.selectedOccurrence.name else { fatalError("Could not get Occurrence Name.") }
+        
+        let fileName = "\(occurrenceName)ExportedData.csv"
+        let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
+        
+        let formattedDataString: String = getDataAsFormattedString()
+        
+        if let path = path {
+            do {
+                try formattedDataString.write(to: path, atomically: true, encoding: String.Encoding.utf8)
+                
+                let activityViewController = UIActivityViewController(activityItems: [path], applicationActivities: [])
+                activityViewController.excludedActivityTypes = [
+                    .assignToContact,
+                    .saveToCameraRoll,
+                    .postToFlickr,
+                    .postToVimeo,
+                    .postToTencentWeibo,
+                    .postToTwitter,
+                    .postToFacebook,
+                    .openInIBooks,
+                ]
+                present(activityViewController, animated: true, completion: nil)
+                
+            } catch let e as NSError {
+                print("Failed to create file. Error: \(e)")
+            }
         }
     }
     

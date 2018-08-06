@@ -28,4 +28,13 @@ extension Date {
         
         return formattedDate
     }
+    
+    var formattedDate: String {
+        let date = self
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .medium
+        dateFormatter.timeStyle = .short
+        
+        return dateFormatter.string(from: date)
+    }
 }
