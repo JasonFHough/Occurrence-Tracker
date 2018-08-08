@@ -18,19 +18,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading App..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AQz-A6-bMl">
-                                <rect key="frame" x="132" y="396" width="111" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="55e-AS-MsF">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="778"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="AQz-A6-bMl" secondAttribute="trailing" constant="132" id="5IZ-v9-1ya"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="AQz-A6-bMl" secondAttribute="bottom" constant="361" id="dbX-xM-div"/>
-                            <constraint firstItem="AQz-A6-bMl" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="132" id="ta4-OS-g89"/>
-                            <constraint firstItem="AQz-A6-bMl" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="352" id="tb1-g7-u6X"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="55e-AS-MsF" secondAttribute="trailing" id="4z8-Vo-3It"/>
+                            <constraint firstItem="55e-AS-MsF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="UCT-zP-6MT"/>
+                            <constraint firstItem="55e-AS-MsF" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="elE-PO-GQL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="55e-AS-MsF" secondAttribute="bottom" id="msH-Sc-szw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
