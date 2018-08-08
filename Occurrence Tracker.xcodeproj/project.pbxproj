@@ -88,7 +88,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		9606D4C021177A9700876AA8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = "../../../../../Users/jason/Downloads/Occurrence-Tracker-master/Occurrence Tracker/Info.plist"; sourceTree = "<group>"; };
 		9606D4C121177C4500876AA8 /* NSFetchedResultsControllerDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSFetchedResultsControllerDelegateExtension.swift; sourceTree = "<group>"; };
 		9606D4C52118F5E600876AA8 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		96784935211773CC00467633 /* Occurrence Tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Occurrence Tracker.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -149,7 +148,6 @@
 				967849CE2117768500467633 /* ResearchKit.xcodeproj */,
 				96784937211773CC00467633 /* Occurrence Tracker */,
 				967849C22117757000467633 /* Assets.xcassets */,
-				9606D4C021177A9700876AA8 /* Info.plist */,
 				96784936211773CC00467633 /* Products */,
 			);
 			sourceTree = "<group>";
