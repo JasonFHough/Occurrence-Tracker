@@ -30,7 +30,7 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
         fetchRequest.sortDescriptors = [NSSortDescriptor(key: "enteredDate", ascending: false)]
         if let context = container?.viewContext {
             fetchedResultsController = NSFetchedResultsController<OccurrenceEntry>(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
-            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "%K == %@", "occurrence.identifier", detailedOccurrenceVC.selectedOccurrence.identifier! as CVarArg)
+            fetchedResultsController.fetchRequest.predicate = NSPredicate(format: "ANY %K == %@", "occurrence.identifier", detailedOccurrenceVC.selectedOccurrence.identifier! as CVarArg)
             fetchedResultsController.delegate = self
         }
         
