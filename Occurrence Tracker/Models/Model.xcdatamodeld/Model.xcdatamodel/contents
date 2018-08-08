@@ -15,7 +15,7 @@
         <attribute name="trackedBooleanData" optional="YES" attributeType="Transformable" customClassName="[String:Bool]" syncable="YES"/>
         <attribute name="trackedLocation" optional="YES" attributeType="Transformable" customClassName="CLLocation" syncable="YES"/>
         <attribute name="trackedStringData" optional="YES" attributeType="Transformable" customClassName="[String:String]" syncable="YES"/>
-        <relationship name="occurrence" maxCount="1" deletionRule="Nullify" destinationEntity="Occurrence" inverseName="entry" inverseEntity="Occurrence" syncable="YES"/>
+        <relationship name="occurrence" toMany="YES" deletionRule="Nullify" destinationEntity="Occurrence" inverseName="entry" inverseEntity="Occurrence" syncable="YES"/>
     </entity>
     <elements>
         <element name="Occurrence" positionX="-36" positionY="0" width="128" height="135"/>

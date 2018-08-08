@@ -172,7 +172,6 @@ extension OccurrenceTableViewController: NewOccurrenceDelegate {
         occurrence.trackedBooleanDataNames = trackedBooleanDataNames
         occurrence.entry = []
         
-        
         fetchedResultsController.saveData()
     }
 }

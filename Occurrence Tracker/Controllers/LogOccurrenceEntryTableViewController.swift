@@ -97,6 +97,8 @@ class LogOccurrenceEntryTableViewController: UITableViewController, CLLocationMa
         entry.trackedStringData = newStringData
         entry.trackedBooleanData = newBooleanData
         entry.trackedLocation = location
+        entry.addToOccurrence(selectedOccurrence)
+        selectedOccurrence.addToEntry(entry)
         if let location = location {
             let geoCoder = CLGeocoder()
             geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
@@ -104,7 +106,6 @@ class LogOccurrenceEntryTableViewController: UITableViewController, CLLocationMa
                 self.fetchedResultsController.saveData()
             }
         }
-        entry.occurrence = selectedOccurrence
         
         fetchedResultsController.saveData()
     }

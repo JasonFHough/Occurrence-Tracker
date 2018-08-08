@@ -2,7 +2,7 @@
 //  Occurrence+CoreDataProperties.swift
 //  Occurrence Tracker
 //
-//  Created by Jason Hough on 8/2/18.
+//  Created by Jason Hough on 8/7/18.
 //  Copyright © 2018 Jason Hough. All rights reserved.
 //
 //
