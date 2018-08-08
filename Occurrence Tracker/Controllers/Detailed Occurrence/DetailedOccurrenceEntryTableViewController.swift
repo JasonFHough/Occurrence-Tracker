@@ -128,10 +128,11 @@ class DetailedOccurrenceEntryTableViewController: UITableViewController {
             let trackedLocation = selectedEntry.trackedLocation
             if let location = trackedLocation, selectedOccurrence.doesTrackLocation {
                 // Set the address text label
-                let geoCoder = CLGeocoder()
-                geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
-                    cell.locationAddressLabel.text = self.selectedEntry.getFormattedAddress(withPlacemarks: placemarks, error: error)
-                }
+//                let geoCoder = CLGeocoder()
+//                geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
+//                    cell.locationAddressLabel.text = self.selectedEntry.getFormattedAddress(withPlacemarks: placemarks, error: error)
+//                }
+                cell.locationAddressLabel.text = selectedEntry.formattedAddress
                 
                 // Pinpoint the location on the map
                 cell.mapView.addAnnotation(MKPlacemark.init(coordinate: location.coordinate))

@@ -13,6 +13,7 @@ class FinishNewOccurrenceViewController: UIViewController {
     private var parentView: NewOccurrencePageViewController?
     private var pageViewPages: [UIViewController]?
     
+    @IBOutlet weak var missingNameLabel: UILabel!
     @IBOutlet weak var finishButton: UIButton!
     
     override func viewDidLoad() {
@@ -24,14 +25,20 @@ class FinishNewOccurrenceViewController: UIViewController {
             pageViewPages = parent.subViewControllers
         }
         
+        checkForRequiredAttributes()
+    }
+    
+    func checkForRequiredAttributes() {
         // Prevent finishing without a name
         if let pages = pageViewPages {
             let namePage = pages[0] as! NewOccurrenceNameViewController
             let name = namePage.nameTextField.text
             if name == "" {
                 finishButton.isEnabled = false
+                missingNameLabel.isHidden = false
             } else {
                 finishButton.isEnabled = true
+                missingNameLabel.isHidden = true
             }
         }
     }
@@ -85,12 +92,6 @@ class FinishNewOccurrenceViewController: UIViewController {
         
         // Go back to the home view
         dismiss(animated: true, completion: nil)
-    }
-    
-    @IBAction private func previousButtonAction(_ sender: UIButton) {
-        guard let parentView = self.parent as? NewOccurrencePageViewController else { return }
-        
-        parentView.goToPreviousPage()
     }
     
 }

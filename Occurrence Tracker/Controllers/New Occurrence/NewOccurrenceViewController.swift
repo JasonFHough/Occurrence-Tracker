@@ -12,15 +12,12 @@ class NewOccurrenceViewController: UIViewController {
 
     var newOccurrenceDelegate: NewOccurrenceDelegate!
     
+    @IBOutlet weak var previousBarButton: UIBarButtonItem!
+    @IBOutlet weak var nextBarButton: UIBarButtonItem!
     @IBOutlet weak private var pageControl: UIPageControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    
-    @IBAction private func cancelButtonActions(_ sender: UIBarButtonItem) {
-        view.endEditing(true)
-        dismiss(animated: true, completion: nil)
     }
     
     // MARK: - Navigation
@@ -29,9 +26,16 @@ class NewOccurrenceViewController: UIViewController {
         if let newOccurrencePageViewController = segue.destination as? NewOccurrencePageViewController {
             newOccurrencePageViewController.newPageDelegate = self
             newOccurrencePageViewController.newOccurrenceDelegate = newOccurrenceDelegate
+            newOccurrencePageViewController.previousBarButton = self.previousBarButton
+            newOccurrencePageViewController.nextBarButton = self.nextBarButton
         }
     }
 
+    func dismissView() {
+        view.endEditing(true)
+        dismiss(animated: true, completion: nil)
+    }
+    
 }
 
 extension NewOccurrenceViewController: NewOccurrencePageViewDelegate {
@@ -42,10 +46,34 @@ extension NewOccurrenceViewController: NewOccurrencePageViewDelegate {
     
     func newOccurrencePageViewController(newOccurrencePageViewController: NewOccurrencePageViewController, didUpdatePageCount count: Int) {
         pageControl.numberOfPages = count
+        
+        previousBarButton.title = "Cancel"
+        previousBarButton.action = #selector(newOccurrencePageViewController.cancelOccurrence)
+        nextBarButton.action = #selector(newOccurrencePageViewController.goToNextPage)
     }
     
     func newOccurrencePageViewController(newOccurrencePageViewController: NewOccurrencePageViewController, didUpdatePageIndex index: Int) {
         pageControl.currentPage = index
+        
+        // Enabling/disabling previous button
+        if newOccurrencePageViewController.getPreviousPage() == nil {
+            previousBarButton.title = "Cancel"
+            previousBarButton.action = #selector(newOccurrencePageViewController.cancelOccurrence)
+        } else {
+            previousBarButton.title = "Previous"
+            previousBarButton.action = #selector(newOccurrencePageViewController.goToPreviousPage)
+        }
+        
+        // Enabling/disabling next button
+        if newOccurrencePageViewController.getNextPage() == nil {
+            nextBarButton.isEnabled = false
+            
+            if let finishPage = newOccurrencePageViewController.getCurrentPage() as? FinishNewOccurrenceViewController {
+                finishPage.checkForRequiredAttributes()
+            }
+        } else {
+            nextBarButton.isEnabled = true
+        }
     }
     
 }

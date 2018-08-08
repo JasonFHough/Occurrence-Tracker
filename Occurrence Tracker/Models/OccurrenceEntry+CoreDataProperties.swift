@@ -22,6 +22,7 @@ extension OccurrenceEntry {
     @NSManaged public var trackedLocation: CLLocation?
     @NSManaged public var trackedStringData: [String:String]?
     @NSManaged public var identifier: String?
+    @NSManaged public var formattedAddress: String?
     @NSManaged public var occurrence: Occurrence?
 
 }

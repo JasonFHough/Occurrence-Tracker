@@ -15,16 +15,5 @@ class NewOccurrenceSiriViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
-    @IBAction private func previousButtonAction(_ sender: UIButton) {
-        guard let parentView = self.parent as? NewOccurrencePageViewController else { return }
-        parentView.goToPreviousPage()
-    }
-    
-    @IBAction private func nextButtonAction(_ sender: UIButton) {
-        guard let parentView = self.parent as? NewOccurrencePageViewController else { return }
-        
-        parentView.goToNextPage()
-    }
     
 }

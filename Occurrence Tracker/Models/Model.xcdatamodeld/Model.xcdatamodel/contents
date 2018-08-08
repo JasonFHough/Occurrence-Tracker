@@ -10,6 +10,7 @@
     </entity>
     <entity name="OccurrenceEntry" representedClassName=".OccurrenceEntry" syncable="YES">
         <attribute name="enteredDate" attributeType="Date" usesScalarValueType="NO" customClassName="Date" syncable="YES"/>
+        <attribute name="formattedAddress" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="identifier" attributeType="String" syncable="YES"/>
         <attribute name="trackedBooleanData" optional="YES" attributeType="Transformable" customClassName="[String:Bool]" syncable="YES"/>
         <attribute name="trackedLocation" optional="YES" attributeType="Transformable" customClassName="CLLocation" syncable="YES"/>
@@ -18,6 +19,6 @@
     </entity>
     <elements>
         <element name="Occurrence" positionX="-36" positionY="0" width="128" height="135"/>
-        <element name="OccurrenceEntry" positionX="187" positionY="89" width="128" height="135"/>
+        <element name="OccurrenceEntry" positionX="187" positionY="89" width="128" height="150"/>
     </elements>
 </model>

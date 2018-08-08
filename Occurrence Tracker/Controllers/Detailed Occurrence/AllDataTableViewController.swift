@@ -106,9 +106,9 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
         if let entries = detailedOccurrenceVC.selectedOccurrence.entry {
             for entry in entries {
                 guard let entry = entry as? OccurrenceEntry else { continue }
-                guard let date = entry.enteredDate?.formattedDate else { fatalError("Could not get the entered date.") }
+                guard let date = entry.enteredDataDateAsString() else { fatalError("Could not get the entered date.") }
                 var newEntryLine: String = "\(date.makeCSVFileFormatSafe),"
-
+                
                 // String Data
                 for nameKey in stringDataOrder {
                     if let value = entry.trackedStringData?[nameKey] {
@@ -123,24 +123,17 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
                         newEntryLine.append("\(boolAsString.makeCSVFileFormatSafe),")
                     }
                 }
-
-                if let location = entry.trackedLocation {
-                    let geoCoder = CLGeocoder()
-                    var formattedAddress: String?
-                    geoCoder.reverseGeocodeLocation(location) { (placemarks, error) in
-                        formattedAddress = entry.getFormattedAddress(withPlacemarks: placemarks, error: error)
-
-                        if let address = formattedAddress {
-                            newEntryLine.append("\(address.makeCSVFileFormatSafe)")
-                        }
-                    }
+                
+                // Location Address
+                if let formattedAddress = entry.formattedAddress {
+                    newEntryLine.append("\(formattedAddress.makeCSVFileFormatSafe)")
                 } else {
                     // Remove the last comma
                     newEntryLine.remove(at: newEntryLine.index(before: newEntryLine.endIndex))
                 }
-
+                
                 newEntryLine.append("\n")
-
+                
                 textForCSV.append(newEntryLine)
             }
         }
@@ -151,7 +144,7 @@ class AllDataTableViewController: UITableViewController, NSFetchedResultsControl
     @objc func exportButtonAction() {
         guard let occurrenceName = detailedOccurrenceVC.selectedOccurrence.name else { fatalError("Could not get Occurrence Name.") }
         
-        let fileName = "\(occurrenceName)ExportedData.csv"
+        let fileName = "\(occurrenceName) Exported Data.csv"
         let path = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName)
         
         let formattedDataString: String = getDataAsFormattedString()

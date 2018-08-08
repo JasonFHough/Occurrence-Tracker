@@ -14,7 +14,7 @@ extension String {
         var newString: String = self
         
         newString.insert("\"", at: newString.startIndex)
-        newString.insert("\"", at: newString.index(before: newString.endIndex))
+        newString.insert("\"", at: newString.endIndex)
         
         return newString
     }

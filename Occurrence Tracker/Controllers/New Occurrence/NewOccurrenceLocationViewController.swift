@@ -49,18 +49,6 @@ class NewOccurrenceLocationViewController: UIViewController, CLLocationManagerDe
         }
     }
     
-    private func checkForLocationAccess() {
-        switch CLLocationManager.authorizationStatus() {
-        case .denied, .restricted, .notDetermined:
-            locationNoteLabel.isHidden = false
-            locationSwitch.isOn = false
-            locationSwitch.isEnabled = false
-        default:
-            locationNoteLabel.isHidden = true
-            locationSwitch.isEnabled = true
-        }
-    }
-    
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         askForLocationAccess()
     }

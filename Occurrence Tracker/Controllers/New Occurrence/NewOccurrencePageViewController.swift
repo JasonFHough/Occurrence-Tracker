@@ -23,33 +23,33 @@ class NewOccurrencePageViewController: UIPageViewController, UIPageViewControlle
     var newOccurrenceDelegate: NewOccurrenceDelegate?
     var newPageDelegate: NewOccurrencePageViewDelegate!
     
+    var previousBarButton: UIBarButtonItem!
+    var nextBarButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.dataSource = self
         self.delegate = self
-        
-        removePageSwipeGesture()
+        previousBarButton.target = self
+        nextBarButton.target = self
+        previousBarButton.action = #selector(goToPreviousPage)
+        nextBarButton.action = #selector(goToNextPage)
         
         // Set the VC that will display in the PageView first
-        let startingVCArrayIndex: Int = 0
-        setViewControllers([subViewControllers[startingVCArrayIndex]], direction: .forward, animated: true, completion: nil)
+        setViewControllers([subViewControllers[0]], direction: .forward, animated: true, completion: nil)
         
         // Assign the appropriate title for the first PageView
-        newPageDelegate.changePageTitle(to: assignAppropriatePageTitle(using: startingVCArrayIndex))
+        newPageDelegate.changePageTitle(to: assignAppropriatePageTitle(using: 0))
         
         // Set the amount of PageControl dots
         newPageDelegate.newOccurrencePageViewController(newOccurrencePageViewController: self, didUpdatePageCount: subViewControllers.count)
     }
     
-    private func removePageSwipeGesture(){
-        for view in view.subviews {
-            if let subView = view as? UIScrollView {
-                subView.isScrollEnabled = false
-            }
-        }
+    func getCurrentPage() -> UIViewController? {
+        return self.viewControllers?.first
     }
     
-    private func getNextPage() -> UIViewController? {
+    func getNextPage() -> UIViewController? {
         guard let currentViewController = self.viewControllers?.first else { fatalError("Could not get the currentViewController.") }
         
         return dataSource?.pageViewController(self, viewControllerAfter: currentViewController)
@@ -60,20 +60,25 @@ class NewOccurrencePageViewController: UIPageViewController, UIPageViewControlle
         return dataSource?.pageViewController(self, viewControllerBefore: currentViewController)
     }
     
-    func goToNextPage(animated: Bool = true) {
-        guard let currentViewController = self.viewControllers?.first else { return }
-        guard let nextViewController = dataSource?.pageViewController(self, viewControllerAfter: currentViewController) else { return }
-        setViewControllers([nextViewController], direction: .forward, animated: animated, completion: nil)
-        newPageDelegate.newOccurrencePageViewController(newOccurrencePageViewController: self, didUpdatePageIndex: subViewControllers.index(of: nextViewController)!)
-        newPageDelegate.changePageTitle(to: assignAppropriatePageTitle(using: subViewControllers.index(of: nextViewController)!))
+    @objc func goToNextPage() {
+        if let nextViewController = getNextPage() {
+            setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+            newPageDelegate.newOccurrencePageViewController(newOccurrencePageViewController: self, didUpdatePageIndex: subViewControllers.index(of: nextViewController)!)
+            newPageDelegate.changePageTitle(to: assignAppropriatePageTitle(using: subViewControllers.index(of: nextViewController)!))
+        }
     }
     
-    func goToPreviousPage(animated: Bool = true) {
-        guard let currentViewController = self.viewControllers?.first else { return }
-        guard let previousViewController = dataSource?.pageViewController(self, viewControllerBefore: currentViewController) else { return }
-        setViewControllers([previousViewController], direction: .reverse, animated: animated, completion: nil)
-        newPageDelegate.newOccurrencePageViewController(newOccurrencePageViewController: self, didUpdatePageIndex: subViewControllers.index(of: previousViewController)!)
-        newPageDelegate.changePageTitle(to: assignAppropriatePageTitle(using: subViewControllers.index(of: previousViewController)!))
+    @objc func goToPreviousPage() {
+        if let previousViewController = getPreviousPage() {
+            setViewControllers([previousViewController], direction: .reverse, animated: true, completion: nil)
+            newPageDelegate.newOccurrencePageViewController(newOccurrencePageViewController: self, didUpdatePageIndex: subViewControllers.index(of: previousViewController)!)
+            newPageDelegate.changePageTitle(to: assignAppropriatePageTitle(using: subViewControllers.index(of: previousViewController)!))
+        }
+    }
+    
+    @objc func cancelOccurrence() {
+        guard let parentView = self.parent as? NewOccurrenceViewController else { return }
+        parentView.dismissView()
     }
     
     private func assignAppropriatePageTitle(using indexValue: Int) -> String {
@@ -125,5 +130,5 @@ class NewOccurrencePageViewController: UIPageViewController, UIPageViewControlle
     func presentationCount(for pageViewController: UIPageViewController) -> Int {
         return subViewControllers.count
     }
-
+    
 }

@@ -11,27 +11,13 @@ import UIKit
 class NewOccurrenceNameViewController: UIViewController {
 
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak private var nextButton: UIButton!
     
     // The GestureRecognizer used for dismissing the keyboard when changing titleNames
     private var textFieldTap: UITapGestureRecognizer?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         nameTextField.delegate = self
-        nameTextField.addTarget(self, action: #selector(self.textFieldDidChange(_:)), for: .editingChanged)
-    }
-
-    @IBAction private func nextButtonAction(_ sender: UIButton) {
-        guard let parentView = self.parent as? NewOccurrencePageViewController else { return }
-        parentView.goToNextPage()
-    }
-    
-    @objc private func textFieldDidChange(_ textField: UITextField) {
-        if let text = textField.text {
-            nextButton.isEnabled = text.isEmpty ? false : true
-        }
     }
     
     private func allowKeyboardToDismissOnTap() {
@@ -66,7 +52,6 @@ extension NewOccurrenceNameViewController: UITextFieldDelegate {
             return false
         }
         
-        nextButton.isEnabled = true
         return true
     }
     

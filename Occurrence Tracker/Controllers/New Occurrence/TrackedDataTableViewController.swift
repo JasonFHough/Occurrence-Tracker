@@ -8,7 +8,9 @@
 
 import UIKit
 
-class TrackedDataTableViewController: UITableViewController {
+class TrackedDataTableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
     
     private var stringEditButton: UIButton?
     private var booleanEditButton: UIButton?
@@ -21,6 +23,8 @@ class TrackedDataTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.delegate = self
+        tableView.dataSource = self
         
         tableView.register(TrackedDataHeaderView.self, forHeaderFooterViewReuseIdentifier: "TrackedDataHeaderView")
     }
@@ -67,23 +71,13 @@ class TrackedDataTableViewController: UITableViewController {
         tableView.isEditing ? booleanButton.setTitle("Done", for: .normal) : booleanButton.setTitle("Edit", for: .normal)
     }
     
-    @IBAction private func previousButtonAction(_ sender: UIButton) {
-        guard let parentView = self.parent as? NewOccurrencePageViewController else { return }
-        parentView.goToPreviousPage()
-    }
-    
-    @IBAction private func nextButtonAction(_ sender: UIButton) {
-        guard let parentView = self.parent as? NewOccurrencePageViewController else { return }
-        parentView.goToNextPage()
-    }
-    
     // MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 2
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
             return numOfStringData
@@ -94,7 +88,7 @@ class TrackedDataTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         switch indexPath.section {
         case 0:
             
@@ -114,7 +108,7 @@ class TrackedDataTableViewController: UITableViewController {
         }
     }
  
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         switch section {
         case 0:
             let header = tableView.dequeueReusableHeaderFooterView(withIdentifier:"TrackedDataHeaderView") as! TrackedDataHeaderView
@@ -135,12 +129,11 @@ class TrackedDataTableViewController: UITableViewController {
         }
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 44.0
     }
     
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if booleanEditButton?.isEnabled == false && indexPath.section == 0 {
             return true
         } else if stringEditButton?.isEnabled == false && indexPath.section == 1 {
@@ -150,8 +143,7 @@ class TrackedDataTableViewController: UITableViewController {
         }
     }
     
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             switch indexPath.section {
             case 0:

@@ -224,10 +224,10 @@
 		96784974211774FA00467633 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				96784978211774FA00467633 /* Occurrence+CoreDataProperties.swift */,
-				96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */,
 				96784976211774FA00467633 /* Occurrence+CoreDataClass.swift */,
+				96784978211774FA00467633 /* Occurrence+CoreDataProperties.swift */,
 				96784979211774FA00467633 /* OccurrenceEntry+CoreDataClass.swift */,
+				96784977211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift */,
 				9678497A211774FA00467633 /* Model.xcdatamodeld */,
 				96784975211774FA00467633 /* Alert.swift */,
 			);

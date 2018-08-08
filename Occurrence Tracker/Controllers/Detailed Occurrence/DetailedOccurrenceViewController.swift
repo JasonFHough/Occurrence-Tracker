@@ -154,6 +154,7 @@ class DetailedOccurrenceViewController: UIViewController, UITableViewDelegate, U
                 entry.trackedStringData = [:]
                 entry.trackedBooleanData = [:]
                 entry.trackedLocation = nil
+                entry.formattedAddress = nil
                 occurrence.addToEntry(entry)
                 
                 do {
