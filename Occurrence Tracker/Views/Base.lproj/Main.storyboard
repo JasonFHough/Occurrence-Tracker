@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="LMP-iN-ahY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="hAc-dn-tJj">
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -8,76 +8,18 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Segues with Peek and Pop" minToolsVersion="7.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Occurrences-->
-        <scene sceneID="5EG-G6-HNg">
-            <objects>
-                <tableViewController id="ekp-Nh-7lw" customClass="OccurrenceTableViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PDN-1L-LPw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OccurrenceTableViewCell" textLabel="PGF-v4-50W" detailTextLabel="o76-cu-LnE" style="IBUITableViewCellStyleSubtitle" id="48W-FK-vfx" userLabel="Table View Cell" customClass="OccurrenceTableViewCell" customModule="Occurrence_Tracker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="48W-FK-vfx" id="fbP-lw-lxo">
-                                    <rect key="frame" x="0.0" y="0.0" width="341" height="43.666666666666664"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="PGF-v4-50W">
-                                            <rect key="frame" x="16.000000000000004" y="5" width="33.333333333333336" height="20.333333333333332"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="o76-cu-LnE">
-                                            <rect key="frame" x="15.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="kX1-vr-PsH" kind="show" identifier="OccurrenceDetail" id="UiB-Wg-qeI">
-                                        <segue key="commit" inheritsFrom="parent" id="CHh-4R-yTC"/>
-                                        <segue key="preview" inheritsFrom="commit" id="LH9-GO-Z3o"/>
-                                    </segue>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ekp-Nh-7lw" id="bpZ-ZC-5j5"/>
-                            <outlet property="delegate" destination="ekp-Nh-7lw" id="GNu-X8-HYQ"/>
-                        </connections>
-                    </tableView>
-                    <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Occurrences" id="pxT-Qq-XbX">
-                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="aZV-Hi-rYO">
-                            <connections>
-                                <segue destination="DfX-Ed-jRV" kind="show" identifier="AddOccurrence" id="IA6-4U-zcb"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="EpF-f9-ohV" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1741.5999999999999" y="186.94581280788179"/>
-        </scene>
         <!--Detailed Occurrence View Controller-->
         <scene sceneID="EYr-Oj-4Hi">
             <objects>
                 <viewController id="kX1-vr-PsH" customClass="DetailedOccurrenceViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jHC-HS-V6L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" translatesAutoresizingMaskIntoConstraints="NO" id="iSJ-V6-IkO">
@@ -94,7 +36,7 @@
                                 </segments>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="10C-Mb-h78">
-                                <rect key="frame" x="16" y="414" width="343" height="299"/>
+                                <rect key="frame" x="16" y="414" width="343" height="280"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="chartEntryCell" id="VaO-An-7x6" customClass="ShownChartDataTableViewCell" customModule="Occurrence_Tracker" customModuleProvider="target">
@@ -147,35 +89,20 @@
                                     <!--2018-07-10 00:54:15 +0000-->
                                 </date>
                             </datePicker>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Frl-UQ-5Uz">
-                                <rect key="frame" x="0.0" y="729" width="375" height="49"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Yvl-CM-z6d"/>
-                                    <barButtonItem title="See All Data" id="D9u-CV-Q25">
-                                        <connections>
-                                            <segue destination="286-kF-ALj" kind="show" id="wXA-A2-Qku"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Suc-Wh-kGx"/>
-                                </items>
-                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="10C-Mb-h78" firstAttribute="leading" secondItem="pd9-P6-9H4" secondAttribute="leading" constant="16" id="EBA-1O-oJd"/>
                             <constraint firstItem="qo5-hS-5mC" firstAttribute="top" secondItem="zJI-Sx-owx" secondAttribute="bottom" constant="8" id="EeV-GH-OPd"/>
                             <constraint firstItem="10C-Mb-h78" firstAttribute="top" secondItem="qo5-hS-5mC" secondAttribute="bottom" constant="8" id="Exy-nS-yLE"/>
-                            <constraint firstItem="Frl-UQ-5Uz" firstAttribute="top" secondItem="10C-Mb-h78" secondAttribute="bottom" constant="16" id="PSE-CB-YLi"/>
-                            <constraint firstItem="Frl-UQ-5Uz" firstAttribute="leading" secondItem="pd9-P6-9H4" secondAttribute="leading" id="QUT-wj-R1L"/>
                             <constraint firstItem="zJI-Sx-owx" firstAttribute="leading" secondItem="pd9-P6-9H4" secondAttribute="leading" constant="16" id="VcF-R9-6PI"/>
                             <constraint firstItem="pd9-P6-9H4" firstAttribute="trailing" secondItem="iSJ-V6-IkO" secondAttribute="trailing" constant="16" id="WYP-5T-Z5E"/>
                             <constraint firstItem="pd9-P6-9H4" firstAttribute="trailing" secondItem="qo5-hS-5mC" secondAttribute="trailing" constant="16" id="WaQ-Cr-e3B"/>
+                            <constraint firstItem="pd9-P6-9H4" firstAttribute="bottom" secondItem="10C-Mb-h78" secondAttribute="bottom" id="ZPH-gG-poG"/>
                             <constraint firstItem="qo5-hS-5mC" firstAttribute="leading" secondItem="pd9-P6-9H4" secondAttribute="leading" constant="16" id="byr-2I-NPh"/>
                             <constraint firstItem="pd9-P6-9H4" firstAttribute="trailing" secondItem="10C-Mb-h78" secondAttribute="trailing" constant="16" id="dVn-W0-XRU"/>
                             <constraint firstItem="iSJ-V6-IkO" firstAttribute="leading" secondItem="pd9-P6-9H4" secondAttribute="leading" constant="16" id="kPJ-H5-QWd"/>
                             <constraint firstItem="pd9-P6-9H4" firstAttribute="trailing" secondItem="zJI-Sx-owx" secondAttribute="trailing" constant="16" id="koq-mQ-4Cp"/>
-                            <constraint firstItem="Frl-UQ-5Uz" firstAttribute="trailing" secondItem="pd9-P6-9H4" secondAttribute="trailing" id="pRk-YA-2FK"/>
-                            <constraint firstItem="Frl-UQ-5Uz" firstAttribute="bottom" secondItem="pd9-P6-9H4" secondAttribute="bottom" id="ryo-Fa-Ale"/>
                             <constraint firstItem="zJI-Sx-owx" firstAttribute="top" secondItem="iSJ-V6-IkO" secondAttribute="bottom" constant="8" id="ywQ-5n-yed"/>
                             <constraint firstItem="iSJ-V6-IkO" firstAttribute="top" secondItem="pd9-P6-9H4" secondAttribute="top" constant="12" id="zcG-fy-JuT"/>
                         </constraints>
@@ -191,13 +118,19 @@
                             <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                         </textField>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="aB1-Wq-pVx">
-                            <connections>
-                                <segue destination="mdW-In-ntf" kind="show" identifier="LogOccurrenceEntry" id="NSu-pB-XOp"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="search" id="D9u-CV-Q25">
+                                <connections>
+                                    <segue destination="286-kF-ALj" kind="show" id="wXA-A2-Qku"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="add" id="aB1-Wq-pVx">
+                                <connections>
+                                    <segue destination="mdW-In-ntf" kind="show" identifier="LogOccurrenceEntry" id="NSu-pB-XOp"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
-                    <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="chartDatePicker" destination="zJI-Sx-owx" id="dbY-sd-Wdk"/>
                         <outlet property="chartSegmentedControl" destination="iSJ-V6-IkO" id="151-kN-ouD"/>
@@ -210,6 +143,48 @@
             </objects>
             <point key="canvasLocation" x="2533.5999999999999" y="436.69950738916259"/>
         </scene>
+        <!--Ad Container View Controller-->
+        <scene sceneID="l0R-Ox-JWS">
+            <objects>
+                <viewController id="hAc-dn-tJj" customClass="AdContainerViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="d20-b5-d1q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aLc-WB-nlh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
+                                <connections>
+                                    <segue destination="LMP-iN-ahY" kind="embed" id="J0Y-ZC-Oak"/>
+                                </connections>
+                            </containerView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xzg-1C-84J" customClass="GADBannerView">
+                                <rect key="frame" x="0.0" y="728" width="375" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fUU-Wk-SCa"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="xzg-1C-84J" firstAttribute="top" secondItem="aLc-WB-nlh" secondAttribute="bottom" id="2bT-ae-51W"/>
+                            <constraint firstItem="xzg-1C-84J" firstAttribute="leading" secondItem="cjM-dd-rkA" secondAttribute="leading" id="3L4-Qr-1Wa"/>
+                            <constraint firstItem="xzg-1C-84J" firstAttribute="bottom" secondItem="cjM-dd-rkA" secondAttribute="bottom" id="5lz-uZ-6Kc"/>
+                            <constraint firstItem="cjM-dd-rkA" firstAttribute="trailing" secondItem="xzg-1C-84J" secondAttribute="trailing" id="VHG-sJ-wyh"/>
+                            <constraint firstItem="aLc-WB-nlh" firstAttribute="top" secondItem="cjM-dd-rkA" secondAttribute="top" constant="-44" id="YN7-ca-N5V"/>
+                            <constraint firstItem="aLc-WB-nlh" firstAttribute="leading" secondItem="cjM-dd-rkA" secondAttribute="leading" id="fsZ-fa-iph"/>
+                            <constraint firstItem="cjM-dd-rkA" firstAttribute="trailing" secondItem="aLc-WB-nlh" secondAttribute="trailing" id="ugP-T4-FN7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="cjM-dd-rkA"/>
+                    </view>
+                    <connections>
+                        <outlet property="adView" destination="xzg-1C-84J" id="Np6-cY-QiD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bSc-06-7c1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-250.40000000000001" y="186.94581280788179"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="vW3-HB-rQx">
             <objects>
@@ -221,29 +196,29 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="ekp-Nh-7lw" kind="relationship" relationship="rootViewController" id="Aol-RQ-i70"/>
+                        <segue destination="Mpq-d3-6N8" kind="relationship" relationship="rootViewController" id="COx-r9-vO3"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ANM-5r-2IG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="975" y="187"/>
+            <point key="canvasLocation" x="846" y="187"/>
         </scene>
         <!--New Occurrence-->
         <scene sceneID="fTt-3z-Enr">
             <objects>
                 <viewController id="1LG-2u-nhj" customClass="NewOccurrenceViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="D9N-97-lNX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fyQ-mD-zlf">
-                                <rect key="frame" x="0.0" y="140" width="375" height="638"/>
+                                <rect key="frame" x="0.0" y="140" width="375" height="554"/>
                                 <connections>
                                     <segue destination="Eg8-YX-lFk" kind="embed" id="bxc-fH-MfE"/>
                                 </connections>
                             </containerView>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="4" translatesAutoresizingMaskIntoConstraints="NO" id="b6Q-s6-PzW">
-                                <rect key="frame" x="168" y="741" width="39" height="37"/>
+                                <rect key="frame" x="168" y="657" width="39" height="37"/>
                                 <color key="pageIndicatorTintColor" red="0.0" green="0.48627450980392156" blue="0.96862745098039216" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="currentPageIndicatorTintColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </pageControl>
@@ -494,6 +469,75 @@
             </objects>
             <point key="canvasLocation" x="5140" y="-587.4384236453202"/>
         </scene>
+        <!--Occurrences-->
+        <scene sceneID="cde-vV-20K">
+            <objects>
+                <viewController id="Mpq-d3-6N8" customClass="OccurrenceTableViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQk-nY-2OW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZHp-9k-IhV">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="OccurrenceTableViewCell" textLabel="gG4-YC-suc" detailTextLabel="0eu-j7-Mo1" style="IBUITableViewCellStyleSubtitle" id="Urt-Xp-Uli" userLabel="Table View Cell" customClass="OccurrenceTableViewCell" customModule="Occurrence_Tracker" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Urt-Xp-Uli" id="deG-vX-yXp">
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gG4-YC-suc">
+                                                    <rect key="frame" x="15" y="5" width="33.333333333333336" height="20.333333333333332"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0eu-j7-Mo1">
+                                                    <rect key="frame" x="14.999999999999996" y="25.333333333333332" width="43.666666666666664" height="14.333333333333334"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="kX1-vr-PsH" kind="show" identifier="OccurrenceDetail" id="sI1-Qx-JOY">
+                                                <segue key="commit" inheritsFrom="parent" id="din-rE-m8D"/>
+                                                <segue key="preview" inheritsFrom="commit" id="muS-bA-Abr"/>
+                                            </segue>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ZHp-9k-IhV" firstAttribute="top" secondItem="EQk-nY-2OW" secondAttribute="top" id="4QA-DM-Mpe"/>
+                            <constraint firstItem="qdq-nB-BX3" firstAttribute="bottom" secondItem="ZHp-9k-IhV" secondAttribute="bottom" constant="-34" id="Kiy-ZL-L7B"/>
+                            <constraint firstItem="ZHp-9k-IhV" firstAttribute="leading" secondItem="qdq-nB-BX3" secondAttribute="leading" id="NYq-tj-1wR"/>
+                            <constraint firstItem="ZHp-9k-IhV" firstAttribute="trailing" secondItem="qdq-nB-BX3" secondAttribute="trailing" id="mHd-hH-QWF"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qdq-nB-BX3"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Occurrences" id="Bvr-R6-LGU">
+                        <barButtonItem key="leftBarButtonItem" systemItem="add" id="XOB-7X-7ce">
+                            <connections>
+                                <segue destination="DfX-Ed-jRV" kind="show" identifier="AddOccurrence" id="0O5-aP-kdf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="ZHp-9k-IhV" id="jQe-FN-y8A"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a1f-8X-AW9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1744.8" y="186.94581280788179"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="2Ej-Ca-1wG">
             <objects>
@@ -582,7 +626,7 @@
             <objects>
                 <tableViewController id="286-kF-ALj" customClass="AllDataTableViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ak6-dM-ejq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
@@ -619,14 +663,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Phk-o3-SNF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3257" y="1278"/>
+            <point key="canvasLocation" x="2102" y="1115"/>
         </scene>
         <!--Date-->
         <scene sceneID="Emc-s6-ZyX">
             <objects>
                 <tableViewController id="UK8-Zi-Blc" customClass="DetailedOccurrenceEntryTableViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" sectionFooterHeight="18" id="0lx-jo-v7A">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -719,14 +763,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZCl-lK-bgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4121" y="1278"/>
+            <point key="canvasLocation" x="2966" y="1115"/>
         </scene>
         <!--New Entry-->
         <scene sceneID="yVP-u4-KYB">
             <objects>
                 <tableViewController id="mdW-In-ntf" customClass="LogOccurrenceEntryTableViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="Q3V-df-J7H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="728"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -822,7 +866,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="MPu-os-37a"/>
-        <segue reference="UiB-Wg-qeI"/>
+        <segue reference="YYr-Tv-IbX"/>
+        <segue reference="sI1-Qx-JOY"/>
     </inferredMetricsTieBreakers>
 </document>

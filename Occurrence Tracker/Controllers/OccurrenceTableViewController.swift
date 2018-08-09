@@ -9,11 +9,13 @@
 import UIKit
 import CoreData
 
-class OccurrenceTableViewController: UITableViewController, NSFetchedResultsControllerDelegate {
+class OccurrenceTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
 
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     var fetchedResultsController: NSFetchedResultsController<Occurrence>!
     var detailedOccurrenceDelegate: DetailedOccurrenceDelegate!
+    
+    @IBOutlet weak var tableView: UITableView!
     
     // Updates number of entries when user taps the back button from DetailedOccurrenceViewController
     override func didMove(toParentViewController parent: UIViewController?) {
@@ -42,6 +44,8 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.dataSource = self
+        tableView.delegate = self
         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
@@ -90,16 +94,16 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
     }
     
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedResultsController.fetchedObjects?.count ?? 0
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellIdentifier = "OccurrenceTableViewCell"
         guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? OccurrenceTableViewCell else { fatalError("The dequeued cell is not an instance of OccurrenceTableViewCell.") }
         
@@ -108,11 +112,11 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
         return cell
     }
 
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
     
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             let occurrence = fetchedResultsController.object(at: indexPath)
             fetchedResultsController.managedObjectContext.delete(occurrence)
@@ -121,9 +125,9 @@ class OccurrenceTableViewController: UITableViewController, NSFetchedResultsCont
         }
     }
     
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) { }
+    func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) { }
     
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
+    func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
         return false
     }
     
