@@ -14,7 +14,6 @@ class NewOccurrencePageViewController: UIPageViewController, UIPageViewControlle
        return [
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceNameView") as! NewOccurrenceNameViewController,
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TrackedDataView") as! TrackedDataTableViewController,
-//        UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceSiriView") as! NewOccurrenceSiriViewController,
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "NewOccurrenceLocationView") as! NewOccurrenceLocationViewController,
         UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FinishNewOccurrenceView") as! FinishNewOccurrenceViewController
         ]

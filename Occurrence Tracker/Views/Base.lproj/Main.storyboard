@@ -360,41 +360,6 @@
             </objects>
             <point key="canvasLocation" x="5989.6000000000004" y="-587.4384236453202"/>
         </scene>
-        <!--New Occurrence Siri View Controller-->
-        <scene sceneID="6Xq-C3-Qqm">
-            <objects>
-                <viewController storyboardIdentifier="NewOccurrenceSiriView" id="Cmy-kA-3hv" customClass="NewOccurrenceSiriViewController" customModule="Occurrence_Tracker" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="xkR-4S-QDX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Use Siri Shortcuts?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OCh-mJ-Pel">
-                                <rect key="frame" x="83.333333333333329" y="341.66666666666669" width="208.66666666666669" height="28.666666666666686"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="kOq-Jn-bqc">
-                                <rect key="frame" x="163" y="390.66666666666669" width="51" height="31"/>
-                            </switch>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="OCh-mJ-Pel" firstAttribute="centerY" secondItem="xkR-4S-QDX" secondAttribute="centerY" constant="-50" id="17l-CL-Udo"/>
-                            <constraint firstItem="OCh-mJ-Pel" firstAttribute="centerX" secondItem="xkR-4S-QDX" secondAttribute="centerX" id="3cl-dz-tHw"/>
-                            <constraint firstItem="kOq-Jn-bqc" firstAttribute="centerY" secondItem="xkR-4S-QDX" secondAttribute="centerY" id="Orh-XC-qxi"/>
-                            <constraint firstItem="kOq-Jn-bqc" firstAttribute="centerX" secondItem="xkR-4S-QDX" secondAttribute="centerX" id="qy4-xJ-Rvu"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="xNr-Kr-SKp"/>
-                    </view>
-                    <connections>
-                        <outlet property="siriShortcutSwitch" destination="kOq-Jn-bqc" id="YCH-jP-DLp"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="27P-ya-6Z2" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="6853.6000000000004" y="-587.4384236453202"/>
-        </scene>
         <!--Finish New Occurrence View Controller-->
         <scene sceneID="EQR-cD-Lc9">
             <objects>
@@ -435,7 +400,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6d-YZ-Maa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8597.6000000000004" y="-587.4384236453202"/>
+            <point key="canvasLocation" x="7772" y="-587"/>
         </scene>
         <!--New Occurrence Name View Controller-->
         <scene sceneID="9SU-VD-PV0">
@@ -601,7 +566,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5g-qc-d8h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7724" y="-587.4384236453202"/>
+            <point key="canvasLocation" x="6898" y="-587"/>
         </scene>
         <!--Detailed Occurrence Chart View Controller-->
         <scene sceneID="BVW-fy-vkV">

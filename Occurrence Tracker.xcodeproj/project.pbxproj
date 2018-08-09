@@ -19,7 +19,6 @@
 		96784962211774DC00467633 /* TrackedDataTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784954211774DC00467633 /* TrackedDataTableViewController.swift */; };
 		96784963211774DC00467633 /* NewOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784955211774DC00467633 /* NewOccurrenceViewController.swift */; };
 		96784964211774DC00467633 /* FinishNewOccurrenceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */; };
-		96784965211774DC00467633 /* NewOccurrenceSiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */; };
 		96784966211774DC00467633 /* NewOccurrenceLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */; };
 		96784967211774DC00467633 /* NewOccurrencePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96784959211774DC00467633 /* NewOccurrencePageViewController.swift */; };
 		96784968211774DC00467633 /* LogOccurrenceEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */; };
@@ -103,7 +102,6 @@
 		96784954211774DC00467633 /* TrackedDataTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrackedDataTableViewController.swift; sourceTree = "<group>"; };
 		96784955211774DC00467633 /* NewOccurrenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceViewController.swift; sourceTree = "<group>"; };
 		96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishNewOccurrenceViewController.swift; sourceTree = "<group>"; };
-		96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceSiriViewController.swift; sourceTree = "<group>"; };
 		96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrenceLocationViewController.swift; sourceTree = "<group>"; };
 		96784959211774DC00467633 /* NewOccurrencePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewOccurrencePageViewController.swift; sourceTree = "<group>"; };
 		9678495A211774DC00467633 /* LogOccurrenceEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogOccurrenceEntryTableViewController.swift; sourceTree = "<group>"; };
@@ -215,7 +213,6 @@
 				96784959211774DC00467633 /* NewOccurrencePageViewController.swift */,
 				96784953211774DC00467633 /* NewOccurrenceNameViewController.swift */,
 				96784954211774DC00467633 /* TrackedDataTableViewController.swift */,
-				96784957211774DC00467633 /* NewOccurrenceSiriViewController.swift */,
 				96784958211774DC00467633 /* NewOccurrenceLocationViewController.swift */,
 				96784956211774DC00467633 /* FinishNewOccurrenceViewController.swift */,
 			);
@@ -406,7 +403,6 @@
 				9678499C2117750000467633 /* DetailedOccurrenceTableViewCell.swift in Sources */,
 				9678497F211774FA00467633 /* Occurrence+CoreDataProperties.swift in Sources */,
 				9678497E211774FA00467633 /* OccurrenceEntry+CoreDataProperties.swift in Sources */,
-				96784965211774DC00467633 /* NewOccurrenceSiriViewController.swift in Sources */,
 				96784963211774DC00467633 /* NewOccurrenceViewController.swift in Sources */,
 				9678499F2117750000467633 /* EntryTrackedDataTableViewCell.swift in Sources */,
 				9678499B2117750000467633 /* TrackedDataHeaderView.swift in Sources */,

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GoogleMobileAds
 
 protocol DetailedOccurrenceDelegate {
     func passOccurrenceDataToDetailViewController(occurrenceObject: Occurrence, sourceVC: OccurrenceTableViewController, sourceCell: OccurrenceTableViewCell)
@@ -34,4 +35,8 @@ protocol NewOccurrencePageViewDelegate {
      - parameter index: the index of the currently visible page.
      */
     func newOccurrencePageViewController(newOccurrencePageViewController: NewOccurrencePageViewController, didUpdatePageIndex index: Int)
+}
+
+protocol DisplayInterstitialAdDelegate {
+    func display(interstitial: GADInterstitial)
 }

@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import GoogleMobileAds
 
 class OccurrenceTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
 
@@ -139,6 +140,7 @@ class OccurrenceTableViewController: UIViewController, UITableViewDataSource, UI
             let destinationNavigationController = segue.destination as! UINavigationController
             let containerView = destinationNavigationController.topViewController as! NewOccurrenceViewController
             
+            containerView.displayAdDelegate = self
             containerView.newOccurrenceDelegate = self
             
         case "OccurrenceDetail":
@@ -177,5 +179,14 @@ extension OccurrenceTableViewController: NewOccurrenceDelegate {
         occurrence.entry = []
         
         fetchedResultsController.saveData()
+    }
+}
+
+extension OccurrenceTableViewController: DisplayInterstitialAdDelegate {
+    func display(interstitial: GADInterstitial) {
+        // Display the ad after dismissing from FinishNewOccurrence
+        if interstitial.isReady {
+            interstitial.present(fromRootViewController: self)
+        }
     }
 }

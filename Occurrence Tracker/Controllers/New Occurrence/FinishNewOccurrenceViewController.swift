@@ -7,11 +7,15 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
-class FinishNewOccurrenceViewController: UIViewController {
+class FinishNewOccurrenceViewController: UIViewController, GADInterstitialDelegate {
     
     private var parentView: NewOccurrencePageViewController?
     private var pageViewPages: [UIViewController]?
+    
+    var interstitialAd: GADInterstitial?
+    var displayAdDelegate: DisplayInterstitialAdDelegate!
     
     @IBOutlet weak var missingNameLabel: UILabel!
     @IBOutlet weak var finishButton: UIButton!
@@ -23,10 +27,36 @@ class FinishNewOccurrenceViewController: UIViewController {
         if let parent = self.parent as? NewOccurrencePageViewController {
             parentView = parent
             pageViewPages = parent.subViewControllers
+            
+            // Set the displayAdDelegate from the var in NewOccurrenceViewController
+            if let newOccurrenceVC = parent.parent as? NewOccurrenceViewController {
+                displayAdDelegate = newOccurrenceVC.displayAdDelegate
+            }
         }
+        
+        interstitialAd = createAndLoadInterstitial()
         
         checkForRequiredAttributes()
     }
+    
+    // MARK: - GADInterstitial
+    
+    private func createAndLoadInterstitial() -> GADInterstitial? {
+        let interstitial = GADInterstitial(adUnitID: AdMobInformation.interstitialTestID)
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func interstitialDidFail(toPresentScreen ad: GADInterstitial) {
+        print("Fail to receive interstitial")
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        interstitialAd = createAndLoadInterstitial()
+    }
+    
+    // MARK: - Other functions
     
     func checkForRequiredAttributes() {
         // Prevent finishing without a name
@@ -49,7 +79,6 @@ class FinishNewOccurrenceViewController: UIViewController {
         // Get references to each page's specific ViewController
         let namePage = pages[0] as! NewOccurrenceNameViewController
         let trackDataPage = pages[1] as! TrackedDataTableViewController
-//        let siriPage = pages[2] as! NewOccurrenceSiriViewController
         let locationPage = pages[2] as! NewOccurrenceLocationViewController
         
         // Start collecting the data for each piece of the Occurrence
@@ -83,15 +112,18 @@ class FinishNewOccurrenceViewController: UIViewController {
             }
         }
         
-//        let useSiri = siriPage.siriShortcutSwitch.isOn
         let useLocation = locationPage.locationSwitch.isOn
-
         
         // Send the Occurrence Data to OccurrenceTableViewController
         parentView?.newOccurrenceDelegate?.createNewOccurrenceUsingCollectedData(name: name, identifier: identifier, doesTrackLocation: useLocation, trackedStringDataNames: trackedStringDataNames, trackedBooleanDataNames: trackedBooleanDataNames)
         
         // Go back to the home view
         dismiss(animated: true, completion: nil)
+        
+        // Tell OccurrenceTableViewController to display the interstitial
+        if let interstitial = interstitialAd {
+            displayAdDelegate.display(interstitial: interstitial)
+        }
     }
     
 }

@@ -10,6 +10,7 @@ import UIKit
 
 class NewOccurrenceViewController: UIViewController {
 
+    var displayAdDelegate: DisplayInterstitialAdDelegate!
     var newOccurrenceDelegate: NewOccurrenceDelegate!
     
     @IBOutlet weak var previousBarButton: UIBarButtonItem!
