@@ -12,6 +12,8 @@ import GoogleMobileAds
 
 class OccurrenceTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, NSFetchedResultsControllerDelegate {
 
+    var editTableViewButton: UIBarButtonItem?
+    
     var container: NSPersistentContainer? = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
     var fetchedResultsController: NSFetchedResultsController<Occurrence>!
     var detailedOccurrenceDelegate: DetailedOccurrenceDelegate!
@@ -47,7 +49,9 @@ class OccurrenceTableViewController: UIViewController, UITableViewDataSource, UI
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        self.navigationItem.rightBarButtonItem = self.editButtonItem
+        editTableViewButton = UIBarButtonItem(title: "Edit", style: .plain, target: self, action: #selector(tableViewEditButton))
+        self.navigationItem.rightBarButtonItem = self.editTableViewButton
+        
     }
 
     func configureCell(_ cell: UITableViewCell, at indexPath: IndexPath) {
@@ -94,7 +98,13 @@ class OccurrenceTableViewController: UIViewController, UITableViewDataSource, UI
         tableView.endUpdates()
     }
     
-    // MARK: - Table view data source
+    // MARK: - Table View
+    
+    @objc func tableViewEditButton() {
+        guard let editButton = editTableViewButton else { return }
+        tableView.setEditing(!tableView.isEditing, animated: true)
+        editButton.title = tableView.isEditing ? "Done" : "Edit"
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
