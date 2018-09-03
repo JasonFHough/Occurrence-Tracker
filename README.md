@@ -4,4 +4,4 @@ A data driven app that allows users to easily track reoccurring events or action
 Future plans include implementing Siri Intents for user ease of use. Name of project subject to change.
 
 ## Demonstration
-![Alt text](Readme-Files/Demonstration.gif?raw=true "Video")
+![Alt text](ReadmeFiles/Demonstration.gif?raw=true "Video")
